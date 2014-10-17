@@ -29,9 +29,6 @@ var help = function() {
     commands: []
   };
 
-  data.name = 'jerry';
-  data.version = '0.0.1';
-
   commands.forEach(function(command) {
     data.commands.push({
       usage: command.usage,
