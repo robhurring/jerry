@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+'use strict';
+
+var CommandRouter = require('command-router');
+var cli = new CommandRouter();
+var path = require('path');
+var fs = require('fs');
+var _ = require('lodash');
+var logger = require('../lib/logger');
+
+var commandsPath = path.join(__dirname, '..', 'lib', 'commands');
+var commands = _.map(fs.readdirSync(commandsPath), function(file) {
+  return require(path.join(commandsPath, file)).Command;
+});
+
+commands.forEach(function(command) {
+  cli.command(command.path, function(params, options) {
+    if(options.h || options.help) {
+      command.help();
+      process.exit(1);
+    } else {
+      command.run(params, options);
+    }
+  });
+});
+
+var help = function() {
+  var data = {
+    commands: []
+  };
+
+  data.name = 'jerry';
+  data.version = '0.0.1';
+
+  commands.forEach(function(command) {
+    data.commands.push({
+      usage: command.usage,
+      description: command.description
+    });
+  });
+
+  logger.logTemplateFile('help.handlebars', data);
+};
+
+cli.on('notfound', function(){
+  help();
+  process.exit(1);
+});
+
+cli.parse(process.argv);
