@@ -7,41 +7,44 @@ var path = require('path');
 var fs = require('fs');
 var _ = require('lodash');
 var logger = require('../lib/logger');
+var base = require('../lib/base');
 
-var commandsPath = path.join(__dirname, '..', 'lib', 'commands');
-var commands = _.map(fs.readdirSync(commandsPath), function(file) {
-  return require(path.join(commandsPath, file)).Command;
-});
-
-commands.forEach(function(command) {
-  cli.command(command.path, function(params, options) {
-    if(options.h || options.help) {
-      command.help();
-      process.exit(1);
-    } else {
-      command.run(params, options);
-    }
+if(base.runSetupCheck()) {
+  var commandsPath = path.join(__dirname, '..', 'lib', 'commands');
+  var commands = _.map(fs.readdirSync(commandsPath), function(file) {
+    return require(path.join(commandsPath, file)).Command;
   });
-});
-
-var help = function() {
-  var data = {
-    commands: []
-  };
 
   commands.forEach(function(command) {
-    data.commands.push({
-      name: command.name,
-      description: command.description
+    cli.command(command.path, function(params, options) {
+      if(options.h || options.help) {
+        command.help();
+        process.exit(1);
+      } else {
+        command.run(params, options);
+      }
     });
   });
 
-  logger.logTemplateFile('help.handlebars', data);
-};
+  var help = function() {
+    var data = {
+      commands: []
+    };
 
-cli.on('notfound', function(){
-  help();
-  process.exit(1);
-});
+    commands.forEach(function(command) {
+      data.commands.push({
+        name: command.name,
+        description: command.description
+      });
+    });
 
-cli.parse(process.argv);
+    logger.logTemplateFile('help.handlebars', data);
+  };
+
+  cli.on('notfound', function(){
+    help();
+    process.exit(1);
+  });
+
+  cli.parse(process.argv);
+}

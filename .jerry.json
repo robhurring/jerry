@@ -1,12 +1,13 @@
 {
   "jira": {
-    "domain": "REQUIRED",
-    "username": "REQUIRED",
+    "host": "REQUIRED",
+    "user": "REQUIRED",
     "password": "REQUIRED",
     "defaultProject": "REQUIRED"
   },
   "github": {
-    "username": "REQUIRED"
+    "user": "REQUIRED",
+    "token": "REQUIRED"
   },
   "maxBranchLength": 50
 }
