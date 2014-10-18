@@ -9,5 +9,7 @@
     "user": "REQUIRED",
     "token": "REQUIRED"
   },
+  "defaultRemote": "origin",
+  "defaultBranch": "dev",
   "maxBranchLength": 50
 }
