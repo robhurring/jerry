@@ -1,16 +1,16 @@
 ```
-         ██╗███████╗██████╗ ██████╗ ██╗   ██╗
-         ██║██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
-         ██║█████╗  ██████╔╝██████╔╝ ╚████╔╝
-    ██   ██║██╔══╝  ██╔══██╗██╔══██╗  ╚██╔╝
-    ╚█████╔╝███████╗██║  ██║██║  ██║   ██║
-     ╚════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
+                       ██╗███████╗██████╗ ██████╗ ██╗   ██╗
+                       ██║██╔════╝██╔══██╗██╔══██╗╚██╗ ██╔╝
+                       ██║█████╗  ██████╔╝██████╔╝ ╚████╔╝
+                  ██   ██║██╔══╝  ██╔══██╗██╔══██╗  ╚██╔╝
+                  ╚█████╔╝███████╗██║  ██║██║  ██║   ██║
+                   ╚════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
 
-    Your friendly helper to the world of gitflow on jira!
+            Your friendly helper to the world of gitflow on jira!
 ```
 
 *DISCLAIMER:* Jerry is a small command-line tool used to aid my day-to-day workflow using jira
-and github. I'm not sure how useful it will be for anyone else.
+and github. I'm not sure how useful it will be for anyone else not working the same way.
 
 ## Installation
 
