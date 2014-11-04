@@ -1,11 +1,11 @@
-/cc {{default reviewer.displayName 'unknown'}}
+/cc {{default reviewer.name 'unknown'}}
 
 [JIRA {{key}}]({{url}})
 
 ### Associated
 
 {{#each associated}}
-
+{{../user}}/{{this}}
 {{/each}}
 
 ### Summary
