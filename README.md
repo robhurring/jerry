@@ -101,7 +101,7 @@ Jerry will detect the ticket from your branch name, lookup some basic details ab
 
 ###### Options
 
-* **--into=BRANCH** This will set the base of the pull-request to `BRANCH`. It will be your `config.defaultBranch` otherwise
+* **--base=BRANCH** This will set the base of the pull-request to `BRANCH`. It will be your `config.defaultBranch` otherwise
 
 ###### Example
 
