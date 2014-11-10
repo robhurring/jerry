@@ -11,5 +11,7 @@
   },
   "defaultRemote": "origin",
   "defaultBranch": "dev",
-  "maxBranchLength": 50
+  "maxBranchLength": 50,
+  "associatedSearchPaths": [
+  ]
 }
