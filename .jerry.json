@@ -13,7 +13,5 @@
   "defaultBranch": "dev",
   "maxBranchLength": 50,
   "associatedSearchPaths": [
-    "~/Sites/apps",
-    "~/Sites/gems"
   ]
 }
