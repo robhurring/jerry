@@ -102,11 +102,13 @@ Jerry will detect the ticket from your branch name, lookup some basic details ab
 ###### Options
 
 * **--base=BRANCH** This will set the base of the pull-request to `BRANCH`. It will be your `config.defaultBranch` otherwise
+* **--remote=REMOTE** This will set the remote of the pull-request to `REMOTE`. It will be your `config.defaultRemote` otherwise
+* **--preview** Preview what will be the title and body of the pull-request.
 
 ###### Example
 
 ```
-$ git checkout -b PL-4_some_feature_branch
+$ git checkout -b PL-4
 $ jerry pull-request
 
 PL-4: Some awesome feature request here
