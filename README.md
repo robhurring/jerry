@@ -43,6 +43,11 @@ Configuring:
 
 The branch command will take a TICKET_ID param and create a named branch for you in your current repo.
 
+###### Options
+
+* **--preview, -p** Show what the generated branch name would be.
+* **--copy, -c** Copy the generated branch name to the clipboard.
+
 ###### Example
 
 ```
